@@ -14,7 +14,12 @@ public class RecursiveMethods {
 	public static double geometricSum(int n) {
 		
 			// FIXME compute the geometric sum for the first n terms recursively
-			return 0;
+		if(n==0) {
+		return 0;
+		}
+		double sum = 0;
+		sum = Math.pow(.5, n) + geometricSum(n-1);
+		return sum;
 		
 	}
 	
@@ -57,7 +62,13 @@ public class RecursiveMethods {
 	public static int gcd(int p, int q) {
 		
 			// FIXME compute the gcd of p and q using recursion
-			return 0;
+			if(p%q==0) {
+			return q;
+			}
+			int gfactor = p%q;
+			gfactor = gcd(q, p%q);
+			return gfactor;
+			
 		
 	}
 
